@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثبت‌نام - فروشگاه کتاب نمونه</title>
+  <link rel="preconnect" href="//fdn.fontcdn.ir">
+  <link rel="preconnect" href="//v1.fontapi.ir">
+  <link href="https://v1.fontapi.ir/css/Vazir" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Vazir, sans-serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1a2a44, #2c3e50);
+      color: white;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00d4ff;
+    }
+
+    .cart {
+      background: #00b4d8;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: white;
+    }
+
+    .cart:hover {
+      transform: scale(1.05);
+    }
+
+    .auth-section {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .auth-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #1a2a44;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #1a2a44;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #d1d5db;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: Vazir, sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-family: Vazir, sans-serif;
+    }
+
+    .btn:hover {
+      background-color: #2563eb;
+      transform: scale(1.02);
+    }
+
+    footer {
+      background: linear-gradient(90deg, #1a2a44, #2c3e50);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links a {
+        margin-left: 1rem;
+        font-size: 1rem;
+      }
+
+      .auth-section {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="index.html#books">کتاب‌ها</a>
+      <a href="register.html">ثبت‌نام</a>
+      <a href="login.html">ورود</a>
+      <a href="about.html">درباره من</a>
+    </div>
+    <a href="cart.html" class="cart">
+      <span>سبد خرید (2)</span>
+    </a>
+  </nav>
+</header>
+
+<section class="auth-section">
+  <form action="" method="post">
+  <h2>ثبت‌نام</h2>
+  <div class="form-group">
+    <label for="name">نام کامل</label>
+    <input required type="text" id="name" placeholder="نام و نام خانوادگی">
+  </div>
+  <div class="form-group">
+    <label for="email">ایمیل</label>
+    <input required type="email" id="email" placeholder="ایمیل">
+  </div>
+  <div class="form-group">
+    <label for="password">رمز عبور</label>
+    <input required type="password" id="password" placeholder="رمز عبور">
+  </div>
+  <div class="form-group">
+    <label for="confirm-password">تکرار رمز عبور</label>
+    <input required type="password" id="confirm-password" placeholder="تکرار رمز عبور">
+  </div>
+  <button class="btn">ثبت‌نام</button>
+  </form>
+</section>
+
+<footer>
+  <p>تمامی حقوق برای فروشگاه کتاب نمونه محفوظ است © 2025</p>
+  <p>تلفن تماس: 021-22335544</p>
+</footer>
+</body>
+</html>

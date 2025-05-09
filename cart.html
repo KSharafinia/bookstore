@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سبد خرید - فروشگاه کتاب نمونه</title>
+  <link rel="preconnect" href="//fdn.fontcdn.ir">
+  <link rel="preconnect" href="//v1.fontapi.ir">
+  <link href="https://v1.fontapi.ir/css/Vazir" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Vazir, sans-serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1a2a44, #2c3e50);
+      color: white;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00d4ff;
+    }
+
+    .cart {
+      background: #00b4d8;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: white;
+    }
+
+    .cart:hover {
+      transform: scale(1.05);
+    }
+
+    .cart-section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .cart-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #1a2a44;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid #d1d5db;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-left: 1rem;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-info h3 {
+      font-size: 1.2rem;
+      color: #1a2a44;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item-info p {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item-info .price {
+      color: #dc2626;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cart-item-actions button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .remove-btn {
+      background-color: #ef4444;
+      color: white;
+    }
+
+    .remove-btn:hover {
+      background-color: #dc2626;
+      transform: scale(1.05);
+    }
+
+    .cart-total {
+      margin-top: 1.5rem;
+      text-align: left;
+      font-size: 1.2rem;
+      color: #1a2a44;
+    }
+
+    .cart-total p {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-family: Vazir, sans-serif;
+    }
+
+    .btn:hover {
+      background-color: #2563eb;
+      transform: scale(1.02);
+    }
+
+    footer {
+      background: linear-gradient(90deg, #1a2a44, #2c3e50);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links a {
+        margin-left: 1rem;
+        font-size: 1rem;
+      }
+
+      .cart-section {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-item img {
+        margin-left: 0;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="index.html#books">کتاب‌ها</a>
+      <a href="register.html">ثبت‌نام</a>
+      <a href="login.html">ورود</a>
+      <a href="about.html">درباره من</a>
+    </div>
+    <a href="cart.html" class="cart">
+      <span>سبد خرید (2)</span>
+    </a>
+  </nav>
+</header>
+
+<section class="cart-section">
+  <h2>سبد خرید</h2>
+  <div class="cart-item">
+    <img src="book-1.jpg" alt="Book 1">
+    <div class="cart-item-info">
+      <h3>کتاب نمونه 1</h3>
+      <p>نویسنده: احمد محمدی</p>
+      <p class="price">150,000 تومان</p>
+    </div>
+    <div class="cart-item-actions">
+      <button class="remove-btn">حذف</button>
+    </div>
+  </div>
+  <div class="cart-item">
+    <img src="book-2.jpg" alt="Book 2">
+    <div class="cart-item-info">
+      <h3>کتاب نمونه 2</h3>
+      <p>نویسنده: مریم احمدی</p>
+      <p class="price">120,000 تومان</p>
+    </div>
+    <div class="cart-item-actions">
+      <button class="remove-btn">حذف</button>
+    </div>
+  </div>
+  <div class="cart-total">
+    <p>جمع کل: <span>270,000 تومان</span></p>
+  </div>
+  <button class="btn">تکمیل خرید</button>
+</section>
+
+<footer>
+  <p>تمامی حقوق برای فروشگاه کتاب نمونه محفوظ است © 2025</p>
+  <p>تلفن تماس: 021-22335544</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه کتاب نمونه</title>
+    <link rel="preconnect" href="//fdn.fontcdn.ir">
+    <link rel="preconnect" href="//v1.fontapi.ir">
+    <link href="https://v1.fontapi.ir/css/Vazir" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Vazir, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1a2a44, #2c3e50);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .cart {
+            background: #00b4d8;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .cart:hover {
+            transform: scale(1.05);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #e0e7ff, #f0f4f8);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a2a44;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .book-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 1rem;
+        }
+
+        .book-info h3 {
+            font-size: 1.2rem;
+            color: #1a2a44;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-info p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-info .price {
+            color: #dc2626;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .book-actions {
+            padding: 0 1rem 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .buy-btn {
+            background-color: #22c55e;
+            color: white;
+        }
+
+        .view-btn {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .single-book {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .single-book img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .single-book-info {
+            flex: 1;
+        }
+
+        .single-book-info h2 {
+            font-size: 1.8rem;
+            color: #1a2a44;
+            margin-bottom: 1rem;
+        }
+
+        .single-book-info p {
+            color: #6b7280;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .single-book-info .price {
+            color: #dc2626;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-family: Vazir, sans-serif;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: linear-gradient(90deg, #1a2a44, #2c3e50);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .single-book {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .single-book img {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-links">
+            <a href="#home">خانه</a>
+            <a href="#books">کتاب‌ها</a>
+            <a href="register.html">ثبت‌نام</a>
+            <a href="login.html">ورود</a>
+            <a href="about.html">درباره من</a>
+        </div>
+        <a href="cart.html" class="cart">
+            <span>سبد خرید (2)</span>
+        </a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>فروشگاه کتاب نمونه</h1>
+    <p>جهانی از دانش و سرگرمی در انتظار شماست</p>
+</section>
+
+<section class="books" id="books">
+    <div class="books-grid">
+        <div class="book-card">
+            <img src="book-1.jpg" alt="Book 1">
+            <div class="book-info">
+                <h3>کتاب نمونه 1</h3>
+                <p>نویسنده: احمد محمدی</p>
+                <p>ناشر: انتشارات نمونه</p>
+                <p class="price">150,000 تومان</p>
+            </div>
+            <div class="book-actions">
+                <button class="action-btn buy-btn">خرید</button>
+                <a href="single-book-1.html"><button class="action-btn view-btn">مشاهده</button></a>
+            </div>
+        </div>
+        <div class="book-card">
+            <img src="book-2.jpg" alt="Book 2">
+            <div class="book-info">
+                <h3>کتاب نمونه 2</h3>
+                <p>نویسنده: مریم احمدی</p>
+                <p>ناشر: انتشارات نور</p>
+                <p class="price">120,000 تومان</p>
+            </div>
+            <div class="book-actions">
+                <button class="action-btn buy-btn">خرید</button>
+                <a href="single-book-2.html"><button class="action-btn view-btn">مشاهده</button></a>
+            </div>
+        </div>
+        <div class="book-card">
+            <img src="book-3.jpg" alt="Book 3">
+            <div class="book-info">
+                <h3>کتاب نمونه 3</h3>
+                <p>نویسنده: رضا حسینی</p>
+                <p>ناشر: انتشارات علم</p>
+                <p class="price">180,000 تومان</p>
+            </div>
+            <div class="book-actions">
+                <button class="action-btn buy-btn">خرید</button>
+                <a href="single-book-3.html"><button class="action-btn view-btn">مشاهده</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="single-book" id="single-book">
+    <img src="book-1.jpg" alt="Book Detail">
+    <div class="single-book-info">
+        <h2>کتاب نمونه 1</h2>
+        <p>نویسنده: احمد محمدی</p>
+        <p>ناشر: انتشارات نمونه</p>
+        <p class="price">150,000 تومان</p>
+        <p>این کتاب داستان جذابی از ماجراهای یک شخصیت خیالی در دنیایی فانتزی است. با نثری روان و توصیفات دقیق، خواننده را به سفری هیجان‌انگیز می‌برد. مناسب برای علاقه‌مندان به داستان‌های ماجراجویی و فانتزی.</p>
+        <button class="btn">افزودن به سبد خرید</button>
+    </div>
+</section>
+
+<footer>
+    <p>تمامی حقوق برای فروشگاه کتاب نمونه محفوظ است © 2025</p>
+    <p>تلفن تماس: 021-22335544</p>
+</footer>
+</body>
+</html>
